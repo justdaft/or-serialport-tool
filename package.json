@@ -1,9 +1,10 @@
 {
-  "name": "orElectronVue",
-  "description": "An electron-vue project",
+  "name": "orSerialPortTool",
+  "description": "A simple serial port debug tool",
   "version": "0.1.0",
   "author": "roc <openroc@gmail.com>",
   "scripts": {
+    "postinstall": "cd app && npm i && node ../tasks/install.js",
     "dev": "node tasks/runner.js dev",
     "pack": "node tasks/runner.js pack",
     "package": "node tasks/package.js"
@@ -36,5 +37,8 @@
     "vue-template-compiler": "^2.1.6",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
+  },
+  "dependencies": {
+    "electron-config": "^0.2.1"
   }
 }

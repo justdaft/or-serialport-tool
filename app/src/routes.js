@@ -1,7 +1,7 @@
 export default [{
   path: '/',
-  name: 'about',
-  component: require('./components/about'),
+  name: 'MainView',
+  component: require('./App'),
 }, {
   path: '*',
   redirect: '/',

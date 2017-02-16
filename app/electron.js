@@ -21,6 +21,8 @@ if (process.env.NODE_ENV === 'developmentHot') {
   config.url = `file://${__dirname}/dist/index.html`
 }
 
+//console.log('=====', app.getPath('userData'));
+
 function createWindow() {
   /**
    * Initial window options
