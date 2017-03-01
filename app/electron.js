@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'developmentHot') {
   config.url = `file://${__dirname}/dist/index.html`
 }
 
-//console.log('=====', app.getPath('userData'));
+console.log('=====', app.getVersion(), app.getPath('userData'));
 
 function createWindow() {
   /**
@@ -29,7 +29,8 @@ function createWindow() {
    */
   mainWindow = new BrowserWindow({
     minHeight: 600,
-    minWidth: 800
+    minWidth: 800,
+    title: "",
   })
 
   mainWindow.maximize()

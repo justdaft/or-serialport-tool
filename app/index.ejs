@@ -4,27 +4,40 @@
     <meta charset="utf-8">
     <title><%= htmlWebpackPlugin.options.title %></title>
     <script type="text/javascript">
+      const electron = require('electron');
+      const __curdirname = __dirname;
+
+      var __userDataPath = electron.remote.app.getPath('userData');
 
       // NOTE: tricky for loading serialport module in hot mode
       const path = require('path');
       if (process.env.NODE_ENV === 'developmentHot') {
         module.paths.push(path.resolve('app', 'node_modules'));
+        __userDataPath = '.';
       }
-      const __curdirname = __dirname;
 
+      console.log(__userDataPath);
+
+      //
       const SerialPort = require('serialport');
 
+      //
       const async = require('async');
 
+      // log
       const log4js = require('log4js');
       log4js.loadAppender('file');
-      log4js.addAppender(log4js.appenders.file('./serialport.log'), 'serialport');
+      log4js.addAppender(
+        log4js.appenders.file(
+          path.join(__userDataPath, '/serialport.log')
+        ), 'serialport');
 
       const logger = log4js.getLogger('serialport');
       logger.setLevel('DEBUG');
 
+      // user preferences
       const Conf = require('conf');
-      
+
       const userCfg = new Conf();
 
     </script>

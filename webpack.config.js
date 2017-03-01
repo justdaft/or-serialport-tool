@@ -34,8 +34,8 @@ let indexConfig = {
     }, {
       test: /\.css$/,
       loader: ExtractTextPlugin.extract({
-        fallbackLoader: "style-loader",
-        loader: "css-loader"
+        fallback: "style-loader",
+        use: "css-loader"
       })
     }, {
       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -52,6 +52,11 @@ let indexConfig = {
         name: 'fonts/[name].[hash:7].[ext]'
       }
     }]
+  },
+  watchOptions: {
+    ignored: /node_modules/, // reduce cpu usage under developmentHot mode
+    aggregateTimeout: 300, //
+    poll: 1000, //
   },
   plugins: [
     new ExtractTextPlugin('styles.css'),

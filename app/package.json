@@ -7,17 +7,14 @@
   "dependencies": {
     "async": "^2.1.4",
     "conf": "^0.12.0",
-    "element-ui": "^1.1.6",
     "jquery": "^3.1.1",
     "log4js": "^1.1.0",
     "material-design-icons": "^3.0.1",
-    "materialize-css": "^0.98.0",
     "roboto-fontface": "^0.7.0",
     "serialport": "^4.0.7",
-    "vue": "^2.1.6",
-    "vue-blu": "^0.1.8",
+    "vue": "^2.2.1",
     "vue-material": "^0.6.3",
-    "vue-router": "^2.1.1",
-    "vuex": "^2.1.1"
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1"
   }
 }

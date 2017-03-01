@@ -9,6 +9,7 @@ let children = [];
 
 function run(command, color, name) {
   let child = exec(command);
+  console.log(command);
 
   child.stdout.on('data', data => {
     util.logFormat(name, data, color);
@@ -19,7 +20,7 @@ function run(command, color, name) {
      *
      * NOTE: needs more testing for stability
      */
-    if (/VALID/g.test(data.toString()) && !isElectronOpen) {
+    if (/Compiled successfully/g.test(data.toString()) && !isElectronOpen) {
       util.colFormat(`Starting electron...\n`, util.BLUE);
       run(`${util.hotEnv} electron app/electron.js`, util.BLUE, 'electron');
       isElectronOpen = true;
@@ -51,7 +52,7 @@ function exit(code) {
     // null
   }
 }
-console.log('====>', process.argv);
+
 if (process.argv[2] == 'dev') {
   util.colFormat(`Starting webpack-dev-server...\n`, util.YELLOW);
   run(
