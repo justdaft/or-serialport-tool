@@ -19,6 +19,9 @@ it's a cross-platform tool.
 ## Usage
 
     // run dev mode
+    npm install
+
+    // run dev mode
     npm run dev
 
     // run pack mode
